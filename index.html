@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Trang trưng bày song ngữ của Agent biên tập tin tức: quy trình, ví dụ chạy thật, năng lực và giới hạn.">
+  <meta name="robots" content="index,follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'">
+  <meta name="theme-color" content="#f4f6f2">
+  <title>Biên tập viên Tin tức — Agent Showcase</title>
+  <style>
+    :root{--ink:#102b34;--muted:#64767a;--paper:#f4f6f2;--white:#fff;--line:#dce5df;--mint:#baf4df;--lime:#d9f76e;--blue:#4775ff;--blue-dark:#264fe0;--coral:#ff7c61;--shadow:0 24px 70px rgba(11,39,46,.10);--radius:24px;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}a{color:inherit}button{font:inherit}.shell{width:min(1180px,calc(100% - 48px));margin:0 auto}.topbar{position:sticky;top:0;z-index:20;background:rgba(244,246,242,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,229,223,.8)}.topbar-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:750;letter-spacing:-.03em}.brand-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--ink);color:var(--lime);font-family:var(--mono);font-size:15px}.nav{display:flex;align-items:center;gap:24px}.nav a{font-size:13px;text-decoration:none;color:var(--muted);transition:color .2s}.nav a:hover{color:var(--ink)}.controls{display:flex;align-items:center;gap:10px}.lang-switch{display:flex;gap:3px;padding:4px;border:1px solid var(--line);border-radius:999px;background:#fff}.lang-switch button{border:0;background:transparent;color:var(--muted);border-radius:999px;padding:7px 10px;font-size:11px;cursor:pointer}.lang-switch button.active{background:var(--ink);color:#fff}.status-pill{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;background:#e5f5eb;color:#286343;font:600 10px var(--mono);letter-spacing:.03em;text-transform:uppercase}.status-dot{width:7px;height:7px;border-radius:50%;background:#31a969;box-shadow:0 0 0 3px rgba(49,169,105,.14)}
+    .hero{position:relative;overflow:hidden;padding:88px 0 74px;background:var(--ink);color:#f8faf6}.hero:before{content:"";position:absolute;width:620px;height:620px;border-radius:50%;right:-160px;top:-250px;background:radial-gradient(circle at 40% 42%,rgba(186,244,223,.35),rgba(71,117,255,.17) 40%,transparent 70%);pointer-events:none}.hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:center}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--mint);font:600 11px var(--mono);letter-spacing:.14em;text-transform:uppercase}.eyebrow:before{content:"";width:28px;height:1px;background:var(--mint)}h1{max-width:700px;margin:22px 0 22px;font-size:clamp(46px,6vw,76px);line-height:.99;letter-spacing:-.065em;font-weight:650}.hero-copy{max-width:570px;color:#bfccca;font-size:17px;line-height:1.7}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 18px;border-radius:999px;border:1px solid transparent;text-decoration:none;font-weight:700;font-size:13px;transition:transform .2s,background .2s;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--lime);color:var(--ink)}.btn-ghost{color:#f8faf6;border-color:rgba(255,255,255,.25)}.btn-arrow{font-size:17px}.hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:34px;color:#90a5a5;font:11px var(--mono)}.hero-art{position:relative;min-height:370px;display:grid;place-items:center}.orbit{position:absolute;width:335px;height:335px;border:1px solid rgba(186,244,223,.22);border-radius:50%;transform:rotate(-25deg) scaleY(.63)}.orbit.two{width:430px;height:430px;transform:rotate(35deg) scaleY(.55);border-color:rgba(217,247,110,.18)}.orbit:after{content:"";position:absolute;top:19%;left:18%;width:11px;height:11px;border-radius:50%;background:var(--lime);box-shadow:0 0 20px var(--lime)}.orbit.two:after{top:auto;left:auto;right:17%;bottom:14%;width:8px;height:8px;background:var(--coral);box-shadow:0 0 20px var(--coral)}.signal-card{position:relative;width:min(350px,100%);padding:22px;border:1px solid rgba(255,255,255,.16);border-radius:22px;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);box-shadow:0 30px 80px rgba(0,0,0,.28);transform:rotate(2deg)}.signal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;color:#a9bcba;font:10px var(--mono);text-transform:uppercase}.signal-wave{height:85px;display:flex;align-items:center;gap:4px;padding:0 4px;border-bottom:1px solid rgba(255,255,255,.12)}.signal-wave i{display:block;width:4px;border-radius:6px;background:linear-gradient(180deg,var(--lime),var(--mint));opacity:.9}.signal-wave i:nth-child(3n){background:linear-gradient(180deg,#7ea3ff,#b1c4ff)}.signal-foot{display:flex;justify-content:space-between;margin-top:17px;color:#d9e1db;font-size:12px}.signal-foot strong{color:var(--lime);font:600 11px var(--mono)}.floating-tag{position:absolute;padding:10px 13px;border-radius:12px;background:var(--lime);color:var(--ink);font:600 10px var(--mono);box-shadow:var(--shadow);transform:rotate(-7deg)}.floating-tag.top{top:40px;right:8px}.floating-tag.bottom{bottom:26px;left:4px;background:var(--mint);transform:rotate(5deg)}
+    .section{padding:88px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:35px}.kicker{color:var(--blue-dark);font:650 11px var(--mono);letter-spacing:.13em;text-transform:uppercase}.section h2{margin:10px 0 0;font-size:clamp(32px,4vw,49px);line-height:1.05;letter-spacing:-.055em;font-weight:650}.section-intro{max-width:430px;margin:0;color:var(--muted);font-size:14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stat{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white)}.stat .num{font-size:38px;line-height:1;letter-spacing:-.06em;font-weight:650}.stat .unit{margin-left:5px;color:var(--blue-dark);font:650 11px var(--mono)}.stat p{margin:12px 0 0;color:var(--muted);font-size:13px}.fineprint{margin:14px 2px 0;color:#7c898b;font-size:11px}
+    .demo-section{padding:84px 0;background:#e9eeea}.demo-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:46px;align-items:start}.demo-copy{position:sticky;top:112px}.demo-copy p{max-width:360px;color:var(--muted);font-size:14px}.demo-title{margin:12px 0 15px;font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-.055em;font-weight:650}.demo-callout{margin-top:25px;padding:15px 16px;border-left:3px solid var(--coral);background:rgba(255,255,255,.68);color:#54676a;font-size:12px}.demo-callout strong{display:block;margin-bottom:3px;color:var(--ink)}.demo-window{overflow:hidden;border:1px solid #d3ded8;border-radius:24px;background:#fff;box-shadow:var(--shadow)}.window-top{display:flex;align-items:center;justify-content:space-between;padding:15px 18px;border-bottom:1px solid #edf0ed}.dots{display:flex;gap:5px}.dots i{width:8px;height:8px;border-radius:50%;background:#e7ece8}.dots i:first-child{background:#ff8b77}.dots i:nth-child(2){background:#f6cc56}.dots i:nth-child(3){background:#68c992}.window-title{color:var(--muted);font:10px var(--mono)}.demo-label{padding:7px 10px;border-radius:99px;background:#f0f4ef;color:#547067;font:600 9px var(--mono);text-transform:uppercase}.demo-body{padding:24px}.stepper{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:23px}.step-btn{display:flex;align-items:center;gap:9px;padding:10px 12px;border:1px solid #e3eae5;border-radius:13px;background:#fff;color:#66777a;text-align:left;font-size:11px;cursor:pointer}.step-btn b{display:grid;place-items:center;flex:0 0 24px;width:24px;height:24px;border-radius:8px;background:#f1f4f0;color:#637671;font:600 10px var(--mono)}.step-btn.active{border-color:#9ab8ff;background:#f5f7ff;color:var(--ink)}.step-btn.active b{background:var(--blue);color:#fff}.demo-view{min-height:292px}.demo-view[hidden]{display:none}.bubble{max-width:90%;margin:0 0 13px;padding:15px 16px;border:1px solid #e9eeea;border-radius:15px;background:#fafbf9;color:#40575b;font-size:12px;line-height:1.7}.bubble.user{margin-left:auto;background:#eaf1ff;border-color:#dbe5ff;color:#294481}.bubble .who{display:block;margin-bottom:6px;color:#8b9b9a;font:600 9px var(--mono);letter-spacing:.08em;text-transform:uppercase}.bubble p{margin:0}.bubble ul{margin:7px 0 0;padding-left:17px}.source-row{display:flex;align-items:center;gap:9px;margin-top:10px;padding:11px 12px;border:1px solid #e6ece7;border-radius:11px;background:#fff;color:#52666a;font-size:11px}.source-icon{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:#eef5f0;color:#41725e;font:700 10px var(--mono)}.source-row a{margin-left:auto;color:var(--blue-dark);font-size:10px;text-decoration:none}.mini-progress{height:3px;margin:19px 0 13px;border-radius:4px;background:#eef1ed;overflow:hidden}.mini-progress span{display:block;width:33.33%;height:100%;border-radius:4px;background:var(--blue);transition:width .35s}.demo-foot{display:flex;align-items:center;justify-content:space-between;color:#8b9997;font:10px var(--mono)}.demo-foot .lock{color:#3b7557}
+    .flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.flow-card{position:relative;min-height:204px;padding:20px 17px;border:1px solid var(--line);border-radius:19px;background:#fff}.flow-card:not(:last-child):after{content:"→";position:absolute;top:24px;right:-14px;z-index:1;display:grid;place-items:center;width:23px;height:23px;border-radius:50%;background:var(--paper);color:#80918d;font-size:13px}.flow-no{display:inline-grid;place-items:center;width:31px;height:31px;border-radius:10px;background:#e9f7ef;color:#23704e;font:600 10px var(--mono)}.flow-card:nth-child(2) .flow-no{background:#edf1ff;color:#4269e7}.flow-card:nth-child(3) .flow-no{background:#fff2dd;color:#b87722}.flow-card:nth-child(4) .flow-no{background:#fceae5;color:#b95743}.flow-card:nth-child(5) .flow-no{background:#f0ecff;color:#7257bb}.flow-card h3{margin:22px 0 8px;font-size:15px;letter-spacing:-.03em}.flow-card p{margin:0;color:var(--muted);font-size:11px;line-height:1.6}
+    .capability-section{background:#fff}.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.cap-card{padding:25px;border:1px solid var(--line);border-radius:20px}.cap-card h3{margin:0 0 16px;font-size:18px;letter-spacing:-.03em}.cap-row{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:13px 0;border-top:1px solid #edf0ed}.cap-row:first-of-type{border-top:0}.cap-status{display:inline-flex;align-items:center;gap:7px;color:#387150;font:650 10px var(--mono);text-transform:uppercase}.cap-status.off{color:#a26035}.cap-status:before{content:"";width:7px;height:7px;border-radius:50%;background:#39a66d}.cap-status.off:before{background:#df9559}.cap-row p{margin:0;color:var(--muted);font-size:12px}.boundary{background:var(--ink);color:#f8faf6;border-radius:20px;padding:25px}.boundary h3{margin:0 0 16px;font-size:18px}.boundary ul{margin:0;padding:0;list-style:none}.boundary li{display:flex;gap:11px;padding:10px 0;border-top:1px solid rgba(255,255,255,.1);color:#bac8c5;font-size:12px}.boundary li:before{content:"×";color:var(--coral);font-weight:800}.boundary-note{margin-top:18px;padding:12px;border-radius:12px;background:rgba(217,247,110,.1);color:var(--lime);font:11px var(--mono)}
+    .standards{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.standard{display:flex;gap:14px;padding:19px;border:1px solid var(--line);border-radius:17px;background:#fff}.standard-mark{flex:0 0 30px;display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--mint);color:#145642;font-weight:800}.standard h3{margin:0 0 5px;font-size:14px}.standard p{margin:0;color:var(--muted);font-size:11px;line-height:1.6}
+    .cta{padding:68px 0 80px}.cta-card{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:38px 42px;border-radius:25px;background:var(--lime)}.cta-card h2{max-width:620px;margin:0;font-size:clamp(27px,4vw,42px);line-height:1.08;letter-spacing:-.05em}.cta-card p{margin:12px 0 0;color:#536047;font-size:13px}.cta .btn{background:var(--ink);color:#fff}.footer{padding:24px 0 34px;border-top:1px solid var(--line);color:#71817e;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer strong{color:var(--ink)}.footer-mono{font:10px var(--mono)}
+    @media(max-width:900px){.nav{gap:13px}.nav a{font-size:11px}.hero-grid{gap:25px}.hero{padding:72px 0 60px}.hero-art{min-height:315px}.flow-grid{grid-template-columns:repeat(3,1fr)}.flow-card:nth-child(3):after{display:none}.demo-layout{grid-template-columns:1fr;gap:28px}.demo-copy{position:static}.demo-copy p{max-width:650px}}
+    @media(max-width:650px){.shell{width:min(100% - 30px,1180px)}.topbar-inner{height:66px}.nav{display:none}.status-pill{font-size:0;padding:10px}.status-pill .status-dot{width:8px;height:8px}.hero{padding:58px 0 45px}.hero-grid{grid-template-columns:1fr;gap:28px}.hero-copy{font-size:15px}.hero-art{min-height:245px}.orbit{width:250px;height:250px}.orbit.two{width:330px;height:330px}.signal-card{width:min(315px,88%);padding:17px}.signal-wave{height:65px}.floating-tag.top{right:0;top:18px}.floating-tag.bottom{left:0;bottom:10px}.section{padding:62px 0}.section-head{display:block}.section-intro{margin-top:15px}.stats{grid-template-columns:1fr}.stat{padding:20px}.stat .num{font-size:32px}.demo-section{padding:62px 0}.stepper{gap:5px}.step-btn{display:block;padding:8px 7px;font-size:9px}.step-btn b{margin-bottom:6px}.demo-body{padding:15px}.demo-view{min-height:360px}.bubble{max-width:100%;font-size:11px}.flow-grid{grid-template-columns:1fr 1fr}.flow-card{min-height:190px;padding:15px}.flow-card:after{display:none!important}.cap-grid{grid-template-columns:1fr}.cap-card,.boundary{padding:19px}.cap-row{grid-template-columns:92px 1fr;gap:8px}.standards{grid-template-columns:1fr}.cta{padding:48px 0 58px}.cta-card{display:block;padding:26px}.cta-card .btn{margin-top:20px}.footer-inner{align-items:flex-start;flex-direction:column}.lang-switch button{padding:7px 8px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top" aria-label="Agent showcase home"><span class="brand-mark">N.</span><span>NEWS / EDITOR</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#demo"><span data-lang="vi">Bản demo</span><span data-lang="zh" hidden>演示</span></a>
+        <a href="#workflow"><span data-lang="vi">Quy trình</span><span data-lang="zh" hidden>工作流程</span></a>
+        <a href="#capabilities"><span data-lang="vi">Năng lực</span><span data-lang="zh" hidden>能力边界</span></a>
+      </nav>
+      <div class="controls">
+        <span class="status-pill"><i class="status-dot"></i><span data-lang="vi">Bản trưng bày</span><span data-lang="zh" hidden>展示版</span></span>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="active" data-lang-choice="vi" aria-pressed="true">VI</button>
+          <button type="button" data-lang-choice="zh" aria-pressed="false">中文</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow"><span data-lang="vi">Hồ sơ Agent · 01</span><span data-lang="zh" hidden>智能体档案 · 01</span></div>
+          <h1><span data-lang="vi">Tin nổi bật,<br>được chắt lọc.</span><span data-lang="zh" hidden>精选重点，<br>清晰呈现。</span></h1>
+          <p class="hero-copy"><span data-lang="vi">Một biên tập viên AI biến URL và nội dung nguồn thành bản tóm tắt có căn cứ, có đường dẫn và luôn chờ bạn duyệt.</span><span data-lang="zh" hidden>一位 AI 新闻编辑将网页与资料整理成有依据、附来源链接的摘要，并始终等待你审核。</span></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#demo"><span data-lang="vi">Xem demo mô phỏng</span><span data-lang="zh" hidden>查看模拟演示</span><span class="btn-arrow">↘</span></a>
+            <a class="btn btn-ghost" href="#capabilities"><span data-lang="vi">Xem năng lực & giới hạn</span><span data-lang="zh" hidden>查看能力与边界</span></a>
+          </div>
+          <div class="hero-meta"><span>HERMES PROFILE · NEWS-EDITOR</span><span>VI / 中文</span><span>NO API · NO BACKEND</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit"></div><div class="orbit two"></div>
+          <div class="floating-tag top">SOURCE → SIGNAL</div>
+          <div class="signal-card">
+            <div class="signal-head"><span>EDITORIAL SCAN</span><span>01—05</span></div>
+            <div class="signal-wave" id="wave"></div>
+            <div class="signal-foot"><span><span data-lang="vi">Tín hiệu đã chọn</span><span data-lang="zh" hidden>已筛选重点</span></span><strong>VERIFIED / LINKED</strong></div>
+          </div>
+          <div class="floating-tag bottom">REVIEW BEFORE SAVE</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="shell">
+        <div class="section-head">
+          <div><div class="kicker"><span data-lang="vi">Từ thao tác đến kết quả</span><span data-lang="zh" hidden>从重复劳动到结果</span></div><h2><span data-lang="vi">Ít đọc lại.<br>Nắm ý nhanh hơn.</span><span data-lang="zh" hidden>少花时间通读，<br>更快掌握重点。</span></h2></div>
+          <p class="section-intro"><span data-lang="vi">Số liệu bên dưới đối chiếu thời gian thủ công bạn cung cấp với một lần chạy thử URL thật. Đây là minh chứng cho một nguồn văn bản, không phải cam kết thời gian cho mọi loại đầu vào.</span><span data-lang="zh" hidden>以下数据将你提供的人工处理时长与一次真实网页试运行对照。它只证明单个文本网页的结果，不代表所有输入类型的固定耗时。</span></p>
+        </div>
+        <div class="stats">
+          <article class="stat"><div><span class="num">15–30</span><span class="unit">MIN</span></div><p><span data-lang="vi">Thời gian thủ công cho một lượt thường gồm 1–3 nguồn.</span><span data-lang="zh" hidden>人工处理一轮通常为 1–3 个来源，约需 15–30 分钟。</span></p></article>
+          <article class="stat"><div><span class="num">13.7</span><span class="unit">SEC</span></div><p><span data-lang="vi">Một lượt chạy thật với URL NASA, chưa gồm thời gian bạn duyệt và lưu.</span><span data-lang="zh" hidden>一次 NASA 网页真实试运行耗时；不含人工审核与保存。</span></p></article>
+          <article class="stat"><div><span class="num">0</span><span class="unit">API</span></div><p><span data-lang="vi">Trang trưng bày này không kết nối Profile, không gửi dữ liệu và không gọi Agent.</span><span data-lang="zh" hidden>本展示页不连接 Profile、不发送数据，也不会调用智能体。</span></p></article>
+        </div>
+        <p class="fineprint"><span data-lang="vi">Lưu ý: lượt chạy đo một URL văn bản ngắn; không thể so sánh trực tiếp với toàn bộ quy trình 1–3 nguồn có người rà soát.</span><span data-lang="zh" hidden>说明：试运行仅处理一个较短的文本网页，不能与包含人工审核的 1–3 个来源完整流程直接等同。</span></p>
+      </div>
+    </section>
+
+    <section class="demo-section" id="demo">
+      <div class="shell demo-layout">
+        <div class="demo-copy">
+          <div class="kicker"><span data-lang="vi">Trải nghiệm mô phỏng</span><span data-lang="zh" hidden>模拟体验</span></div>
+          <h2 class="demo-title"><span data-lang="vi">Xem Agent<br>suy nghĩ theo bước.</span><span data-lang="zh" hidden>按步骤查看<br>智能体的处理过程。</span></h2>
+          <p><span data-lang="vi">Bấm qua ba màn hình để xem đầu vào, cách xử lý và kết quả của một phiên chạy thật. Nội dung đã được ghi sẵn; các nút chỉ chuyển màn hình.</span><span data-lang="zh" hidden>点击三个阶段，查看一次真实运行的输入、处理过程与结果。页面内容为预置记录；按钮只切换展示，不会运行模型。</span></p>
+          <div class="demo-callout"><strong><span data-lang="vi">Bản xem trước an toàn</span><span data-lang="zh" hidden>安全预览</span></strong><span data-lang="vi">Không có ô nhập, tải tệp, lưu trữ hay kết nối API.</span><span data-lang="zh" hidden>没有输入框、文件上传、数据存储或 API 连接。</span></div>
+        </div>
+        <div class="demo-window" aria-label="Simulated agent demo">
+          <div class="window-top"><div class="dots"><i></i><i></i><i></i></div><div class="window-title">NEWS-EDITOR / PUBLIC DEMO</div><span class="demo-label"><span data-lang="vi">BẢN GHI SẴN</span><span data-lang="zh" hidden>预置记录</span></span></div>
+          <div class="demo-body">
+            <div class="stepper" role="tablist" aria-label="Demo stages">
+              <button class="step-btn active" type="button" data-step="1" role="tab" aria-selected="true"><b>01</b><span data-lang="vi">Đầu vào</span><span data-lang="zh" hidden>输入</span></button>
+              <button class="step-btn" type="button" data-step="2" role="tab" aria-selected="false"><b>02</b><span data-lang="vi">Chắt lọc</span><span data-lang="zh" hidden>筛选</span></button>
+              <button class="step-btn" type="button" data-step="3" role="tab" aria-selected="false"><b>03</b><span data-lang="vi">Bản nháp</span><span data-lang="zh" hidden>摘要草稿</span></button>
+            </div>
+            <div class="demo-view" data-view="1" role="tabpanel">
+              <div class="bubble user"><span class="who"><span data-lang="vi">Người dùng · URL công khai</span><span data-lang="zh" hidden>用户 · 公开网页</span></span><p>Hãy chắt lọc tin nổi bật và tóm tắt bằng tiếng Việt. Không suy đoán; gắn nguồn cho từng ý.<br><span style="color:#647a9f">nasa.gov/news-release/nasa-releases-max-power-key-events-for-media-participants/</span></p></div>
+              <div class="source-row"><span class="source-icon">N</span><span>NASA · News Release · 30 Oct 2026</span><a href="https://www.nasa.gov/news-release/nasa-releases-max-power-key-events-for-media-participants/" target="_blank" rel="noopener noreferrer"><span data-lang="vi">Mở nguồn ↗</span><span data-lang="zh" hidden>打开来源 ↗</span></a></div>
+            </div>
+            <div class="demo-view" data-view="2" role="tabpanel" hidden>
+              <div class="bubble"><span class="who">NEWS-EDITOR / WEB_EXTRACT</span><p><span data-lang="vi">Đọc nội dung trang và ghi nhận mốc sự kiện, địa điểm, hoạt động chính, nhân vật và lịch trình. Tách thông tin đã nêu khỏi phần chưa có căn cứ.</span><span data-lang="zh" hidden>提取网页内容，记录活动日期、地点、重点安排、相关人物与日程；区分来源明确的信息与缺少依据的内容。</span></p></div>
+              <div class="bubble"><span class="who"><span data-lang="vi">Quy tắc áp dụng</span><span data-lang="zh" hidden>应用的判断规则</span></span><ul><li><span data-lang="vi">Ưu tiên ý có ảnh hưởng trực tiếp và thời điểm rõ.</span><span data-lang="zh" hidden>优先保留影响直接、时间明确的信息。</span></li><li><span data-lang="vi">Đối chiếu URL với nội dung được dẫn.</span><span data-lang="zh" hidden>核对来源链接是否支持对应内容。</span></li><li><span data-lang="vi">Giữ bản nháp chờ người dùng duyệt.</span><span data-lang="zh" hidden>生成草稿后等待用户审核。</span></li></ul></div>
+            </div>
+            <div class="demo-view" data-view="3" role="tabpanel" hidden>
+              <div class="bubble"><span class="who"><span data-lang="vi">Bản nháp · cần người dùng duyệt</span><span data-lang="zh" hidden>摘要草稿 · 等待用户审核</span></span>
+                <p><strong><span data-lang="vi">NASA công bố các sự kiện MAX POWER</span><span data-lang="zh" hidden>NASA 公布 MAX POWER 活动安排</span></strong><br><span data-lang="vi">Phát hành 30/10/2026 · Sự kiện 6–8/11 tại khu vực Trung tâm Vũ trụ Kennedy.</span><span data-lang="zh" hidden>发布于 2026 年 10 月 30 日 · 活动将于 11 月 6–8 日在肯尼迪航天中心周边举行。</span></p>
+                <ul><li><span data-lang="vi">NASA giới thiệu máy bay X-59; đối tác trưng bày công nghệ hàng không-vũ trụ và thiết bị Mặt Trăng.</span><span data-lang="zh" hidden>NASA 将展示 X-59 飞机；合作方将展示航空航天技术与月球设备。</span></li><li><span data-lang="vi">Họp báo về Moon Base dự kiến lúc 17:00 EST ngày 7/11, có phát trực tuyến.</span><span data-lang="zh" hidden>Moon Base 新闻发布会暂定于 11 月 7 日美国东部时间 17:00 举行，并提供直播。</span></li><li><span data-lang="vi">Lịch trình có thể thay đổi; thông tin dựa trên thông báo NASA.</span><span data-lang="zh" hidden>日程可能调整；本摘要依据 NASA 公告整理。</span></li></ul>
+                <div class="source-row"><span class="source-icon">↗</span><span><span data-lang="vi">Nguồn cho các chi tiết</span><span data-lang="zh" hidden>相关来源</span></span><a href="https://www.nasa.gov/news-release/nasa-releases-max-power-key-events-for-media-participants/" target="_blank" rel="noopener noreferrer">NASA.gov ↗</a></div>
+              </div>
+            </div>
+            <div class="mini-progress"><span id="progress"></span></div>
+            <div class="demo-foot"><span id="step-label">01 / 03</span><span class="lock">● <span data-lang="vi">Không gọi Agent</span><span data-lang="zh" hidden>未调用智能体</span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="shell">
+        <div class="section-head"><div><div class="kicker"><span data-lang="vi">Quy trình đã định nghĩa</span><span data-lang="zh" hidden>已定义的工作流程</span></div><h2><span data-lang="vi">Từ nguồn đến<br>bản nháp có căn cứ.</span><span data-lang="zh" hidden>从来源到<br>有依据的摘要。</span></h2></div><p class="section-intro"><span data-lang="vi">Mỗi bước đều giữ lại khả năng đối chiếu nguồn. Bản cuối chỉ được lưu sau khi có xác nhận của người dùng.</span><span data-lang="zh" hidden>每一步都保留来源核对能力；只有用户确认后，才保存最终版本。</span></p></div>
+        <div class="flow-grid">
+          <article class="flow-card"><span class="flow-no">01</span><h3><span data-lang="vi">Kiểm định nguồn</span><span data-lang="zh" hidden>检查来源</span></h3><p><span data-lang="vi">Xác định nguồn truy cập được, đọc/phát được và đủ nội dung.</span><span data-lang="zh" hidden>确认来源可访问、可读取或播放，且内容完整。</span></p></article>
+          <article class="flow-card"><span class="flow-no">02</span><h3><span data-lang="vi">Đọc & trích xuất</span><span data-lang="zh" hidden>读取与提取</span></h3><p><span data-lang="vi">Đọc văn bản; chuyển lời nói thành chữ khi đã bật và cấu hình STT.</span><span data-lang="zh" hidden>读取文本；启用并配置语音识别后，才转写音视频内容。</span></p></article>
+          <article class="flow-card"><span class="flow-no">03</span><h3><span data-lang="vi">Chọn tin chính</span><span data-lang="zh" hidden>筛选重点</span></h3><p><span data-lang="vi">Xét ảnh hưởng, tính thời sự, độ tin cậy của số liệu và phát biểu.</span><span data-lang="zh" hidden>根据影响、时效性，以及数据和发言的可靠性筛选重点。</span></p></article>
+          <article class="flow-card"><span class="flow-no">04</span><h3><span data-lang="vi">Viết & kiểm tra</span><span data-lang="zh" hidden>撰写与核对</span></h3><p><span data-lang="vi">Tóm tắt rõ ràng, giữ ngữ cảnh và gắn URL đúng với từng ý.</span><span data-lang="zh" hidden>清晰总结、保留语境，并为每个要点附上对应链接。</span></p></article>
+          <article class="flow-card"><span class="flow-no">05</span><h3><span data-lang="vi">Chờ duyệt</span><span data-lang="zh" hidden>等待审核</span></h3><p><span data-lang="vi">Trình dự thảo cho người dùng. Không tự xuất bản công khai.</span><span data-lang="zh" hidden>先交用户审核；不会擅自公开发布。</span></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section capability-section" id="capabilities">
+      <div class="shell">
+        <div class="section-head"><div><div class="kicker"><span data-lang="vi">Minh bạch năng lực</span><span data-lang="zh" hidden>能力透明</span></div><h2><span data-lang="vi">Ranh giới được<br>nói rõ từ đầu.</span><span data-lang="zh" hidden>能力边界<br>一目了然。</span></h2></div><p class="section-intro"><span data-lang="vi">Trang này chỉ giới thiệu Agent. Trạng thái dưới đây phản ánh cấu hình `news-editor` đã kiểm tra, không phải một lời hứa về tính năng chưa bật.</span><span data-lang="zh" hidden>本页只展示智能体。以下状态来自已检查的 `news-editor` 配置，并非对未启用功能的承诺。</span></p></div>
+        <div class="cap-grid">
+          <article class="cap-card">
+            <h3><span data-lang="vi">Năng lực hiện tại</span><span data-lang="zh" hidden>当前能力</span></h3>
+            <div class="cap-row"><span class="cap-status"><span data-lang="vi">Đã chạy</span><span data-lang="zh" hidden>已验证</span></span><p><span data-lang="vi">Đọc và tóm tắt URL văn bản công khai; gắn URL nguồn.</span><span data-lang="zh" hidden>读取并总结公开网页文本，附上来源链接。</span></p></div>
+            <div class="cap-row"><span class="cap-status"><span data-lang="vi">Đã chạy</span><span data-lang="zh" hidden>已验证</span></span><p><span data-lang="vi">Trình bản nháp và yêu cầu người dùng duyệt trước khi lưu.</span><span data-lang="zh" hidden>先提交草稿，等待用户审核后再保存。</span></p></div>
+            <div class="cap-row"><span class="cap-status off"><span data-lang="vi">Chưa bật</span><span data-lang="zh" hidden>未启用</span></span><p><span data-lang="vi">Phiên âm âm thanh (`stt`) và phân tích video (`video`).</span><span data-lang="zh" hidden>音频转写（`stt`）与视频分析（`video`）。</span></p></div>
+            <div class="cap-row"><span class="cap-status off"><span data-lang="vi">Chưa xác minh</span><span data-lang="zh" hidden>未验证</span></span><p><span data-lang="vi">Tự động lưu vào Feishu, Notion, Google Docs hoặc hệ thống nội bộ.</span><span data-lang="zh" hidden>自动保存到飞书、Notion、Google Docs 或内部系统。</span></p></div>
+          </article>
+          <aside class="boundary">
+            <h3><span data-lang="vi">Bảo vệ người xem & dữ liệu</span><span data-lang="zh" hidden>访客与数据保护</span></h3>
+            <ul>
+              <li><span data-lang="vi">Demo là kịch bản có sẵn; không có ô nhập hoặc tải tệp.</span><span data-lang="zh" hidden>演示内容为预置脚本；没有输入框或文件上传。</span></li>
+              <li><span data-lang="vi">Không gọi model, API hoặc Hermes Profile của chủ sở hữu.</span><span data-lang="zh" hidden>不会调用模型、API 或所有者的 Hermes Profile。</span></li>
+              <li><span data-lang="vi">Không nhúng API key, quyền truy cập, nhật ký phiên hay đường dẫn riêng.</span><span data-lang="zh" hidden>不包含 API 密钥、访问权限、会话记录或私有路径。</span></li>
+              <li><span data-lang="vi">Không thể gửi nội dung cho Agent hoặc xuất bản kết quả từ trang này.</span><span data-lang="zh" hidden>访客不能从此页面向智能体提交内容或发布结果。</span></li>
+            </ul>
+            <div class="boundary-note">STATIC SHOWCASE · CONNECT-SRC: NONE</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="standards">
+      <div class="shell">
+        <div class="section-head"><div><div class="kicker"><span data-lang="vi">Quy chuẩn biên tập</span><span data-lang="zh" hidden>编辑规范</span></div><h2><span data-lang="vi">Căn cứ trước.<br>Khẳng định sau.</span><span data-lang="zh" hidden>先核实依据，<br>再给出结论。</span></h2></div><p class="section-intro"><span data-lang="vi">Agent ưu tiên tính xác thực và khả năng truy nguồn hơn độ giật gân hay tốc độ đăng.</span><span data-lang="zh" hidden>智能体优先保证真实与可追溯，而非追求标题效果或发布速度。</span></p></div>
+        <div class="standards">
+          <article class="standard"><span class="standard-mark">✓</span><div><h3><span data-lang="vi">Không suy đoán</span><span data-lang="zh" hidden>不作猜测</span></h3><p><span data-lang="vi">Điểm không xác minh được phải ghi “chưa rõ” hoặc lược bỏ.</span><span data-lang="zh" hidden>无法核实的细节必须标为“尚不明确”或直接省略。</span></p></div></article>
+          <article class="standard"><span class="standard-mark">↗</span><div><h3><span data-lang="vi">Nguồn đúng với ý</span><span data-lang="zh" hidden>来源对应内容</span></h3><p><span data-lang="vi">Mỗi URL phải hỗ trợ chính xác chi tiết được dẫn.</span><span data-lang="zh" hidden>每个链接都必须准确支持所引用的细节。</span></p></div></article>
+          <article class="standard"><span class="standard-mark">≋</span><div><h3><span data-lang="vi">Cân bằng khi có mâu thuẫn</span><span data-lang="zh" hidden>平衡呈现分歧</span></h3><p><span data-lang="vi">Nêu các quan điểm và căn cứ; không tự chọn bên đúng khi chưa đủ chứng cứ.</span><span data-lang="zh" hidden>呈现各方观点和依据；证据不足时不擅自判定哪方正确。</span></p></div></article>
+          <article class="standard"><span class="standard-mark">Ⅱ</span><div><h3><span data-lang="vi">Người dùng duyệt trước</span><span data-lang="zh" hidden>用户先审核</span></h3><p><span data-lang="vi">Không lưu bản cuối hoặc đăng công khai khi chưa được phê duyệt.</span><span data-lang="zh" hidden>未经批准，不保存最终版本，也不公开发布。</span></p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="use">
+      <div class="shell">
+        <div class="cta-card"><div><h2><span data-lang="vi">Một quy trình rõ ràng.<br>Một bản tóm tắt dễ kiểm chứng.</span><span data-lang="zh" hidden>流程清晰，<br>摘要有据可查。</span></h2><p><span data-lang="vi">Trang công khai này chỉ để xem. Người vận hành Agent thật cần quyền truy cập riêng vào Hermes.</span><span data-lang="zh" hidden>此公开页面仅供查看。实际使用智能体需要单独访问 Hermes。</span></p></div><a class="btn" href="#demo"><span data-lang="vi">Xem lại bản demo</span><span data-lang="zh" hidden>再次查看演示</span><span class="btn-arrow">↑</span></a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell footer-inner"><div><strong>NEWS / EDITOR</strong> · <span data-lang="vi">Hồ sơ Agent công khai</span><span data-lang="zh" hidden>公开智能体档案</span></div><div class="footer-mono"><span data-lang="vi">DEMO TĨNH · KHÔNG KẾT NỐI API</span><span data-lang="zh" hidden>静态演示 · 未连接 API</span></div><div>VI / 中文 · 2026</div></div></footer>
+
+  <script>
+    (() => {
+      const langButtons = [...document.querySelectorAll('[data-lang-choice]')];
+      const langNodes = [...document.querySelectorAll('[data-lang]')];
+      function setLanguage(lang) {
+        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'vi';
+        langNodes.forEach(node => { node.hidden = node.dataset.lang !== lang; });
+        langButtons.forEach(button => {
+          const active = button.dataset.langChoice === lang;
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-pressed', String(active));
+        });
+      }
+      langButtons.forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.langChoice)));
+      const stepButtons = [...document.querySelectorAll('[data-step]')];
+      const views = [...document.querySelectorAll('[data-view]')];
+      const progress = document.getElementById('progress');
+      const label = document.getElementById('step-label');
+      stepButtons.forEach(button => button.addEventListener('click', () => {
+        const step = Number(button.dataset.step);
+        stepButtons.forEach(item => {
+          const active = item === button;
+          item.classList.toggle('active', active);
+          item.setAttribute('aria-selected', String(active));
+        });
+        views.forEach(view => { view.hidden = Number(view.dataset.view) !== step; });
+        progress.style.width = `${step * 33.333}%`;
+        label.textContent = `0${step} / 03`;
+      }));
+      const wave = document.getElementById('wave');
+      const heights = [18,31,22,49,36,61,30,45,70,38,24,55,31,68,40,27,58,34,74,42,27,51,32,63,39,24,45,69,37,22,53,32,61,29,44,70,38,24,54,31,64,35,24,49,33,60,28,44,72,36,23,53,30,65,40,25,47,61,34,22,57,31,68,39,25,50,34,62,30,44,73,35,22,55,31,66,40,24,48,32,60,28,44,70,36,23,53,31,64,38,25,49,34,62,30,45];
+      heights.forEach(height => { const bar = document.createElement('i'); bar.style.height = `${height}px`; wave.appendChild(bar); });
+      setLanguage('vi');
+    })();
+  </script>
+</body>
+</html>
